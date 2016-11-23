@@ -111,14 +111,11 @@ namespace XBEE {
 
 	void SerialXbee::FrameWritten(const boost::system::error_code &error, size_t num_bytes, Frame *a_frame) {
 		using namespace boost::asio;
-
-		std::cout << "Entered FrameWritten Function" << std::endl;
-
+//		std::cout << "Entered FrameWritten Function" << std::endl;
 		if (error) {
 			std::cout << "[ERROR] FOUND" << std::endl;
 		}
-
-		WriteHandler(a_frame);
+//		WriteHandler(a_frame);
 	}
 
 	void SerialXbee::PrintFrame(Frame *a_frame) {

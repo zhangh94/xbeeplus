@@ -47,12 +47,11 @@ namespace XBEE {
 
   // TODO: Possible bug that actual 0x00 character will not be successfully returned
   std::string ReceivePacket::GetData() {
-    auto itr = data.begin();
-    std::string temp = "";
-    while(*itr != 0x00) {
-      temp += static_cast<char>(*itr);
-    }
-    return temp;
+      std::stringstream data_str;
+      for (auto itr = data.begin(); itr != data.end(); ++itr)
+          if (*itr != 0x00)
+      data_str << *itr;
+      return data_str.str();
   }
 
   // TODO: Make a generic function that returns a vector of uint8_t
