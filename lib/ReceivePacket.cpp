@@ -49,8 +49,7 @@ namespace XBEE {
   std::string ReceivePacket::GetData() {
       std::stringstream data_str;
       for (auto itr = data.begin(); itr != data.end(); ++itr)
-          if (*itr != 0x00)
-      data_str << *itr;
+          if (*itr != 0x00) data_str << *itr;
       return data_str.str();
   }
 

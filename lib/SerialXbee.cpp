@@ -88,7 +88,7 @@ namespace XBEE {
 
 				// Store into RecievePacket's data field
 				uint8_t piece;
-				for (int i = 0; i < frame_length - 13; i++)
+                for (int i = 0; i < frame_length - 12; i++)
 					temp >> frame.data.at(i);
 				frame.length = frame_length;
 				temp.get(holder[0]);
